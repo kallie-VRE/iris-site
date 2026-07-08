@@ -4,13 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iris</title>
-<link rel="stylesheet" href="styles.css">
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(237, 88, 36, 0.16), transparent 28%),
+      radial-gradient(circle at 75% 75%, rgba(74, 138, 139, 0.18), transparent 30%),
+      linear-gradient(135deg, #f7f9fb 0%, #eef3f6 45%, #dfe8ee 100%);
+    font-family: Arial, sans-serif;
+  }
+
+  body::before {
+    content: "Ask Iris";
+    position: fixed;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #244f76;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+
+  body::after {
+    content: "You bring the question. Iris will keep an eye out for the answer.";
+    position: fixed;
+    top: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #4f6473;
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+  }
+
+  #ko-ai-chatbot-btn {
+    display: none !important;
+  }
+
+  #ko-ai-chatbot {
+    position: fixed !important;
+    top: 145px !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateX(-50%) !important;
+    width: 520px !important;
+    height: 620px !important;
+    max-width: calc(100vw - 32px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 18px 55px rgba(36, 79, 118, .22) !important;
+  }
+
+  #ko-ai-chatbot iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  @media (max-width: 600px) {
+    body::before {
+      top: 24px;
+      font-size: 28px;
+    }
+
+    body::after {
+      top: 66px;
+      font-size: 14px;
+    }
+
+    #ko-ai-chatbot {
+      top: 115px !important;
+      width: calc(100vw - 24px) !important;
+      height: calc(100vh - 135px) !important;
+    }
+  }
+</style>
 </head>
+
 <body>
+
+<script>
+  window.addEventListener("ko-chatbot-ready", () => {
+    window.KnowledgeOwlChatbot.open();
+  });
+</script>
 
 <script
   src="https://dyzz9obi78pm5.cloudfront.net/min/js/ko-ai-chatbot.js"
-  data-host="YOUR-CLOUD-RUN-DOMAIN"
+  data-host="iris-site-515702291872.us-central1.run.app"
   data-domain="vision.knowledgeowl.com">
 </script>
 
