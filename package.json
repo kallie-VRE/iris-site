@@ -1,0 +1,12 @@
+{
+  "name": "iris-site",
+  "version": "1.0.0",
+  "description": "Vision Iris Chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
